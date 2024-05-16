@@ -7,7 +7,91 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <!-- Function Divs -->
+    <div class="functions">
+        <div id="equality"></div>
+        <div id="temperature"></div>
+        <div id="operation"></div>
+    </div>
+
+    <!-- Display function fomr comparing values -->
+    <script>
+        function compareValues(a, b) {
+            if (a == b) {
+                return "a is equal to b";
+            } else {
+                return "a is not equal to b";
+            }
+        }
+
+        let equality = document.getElementById("equality");
+
+        equality.innerHTML += compareValues(8, 8) + "<br>";
+        equality.innerHTML += compareValues(3, "3") + "<br>";
+        equality.innerHTML += compareValues(7, 9) + "<br>";
+        equality.innerHTML += compareValues("hello", 4) + "<br>";
+        equality.innerHTML += compareValues("hello", "world") + "<br>";
+        equality.innerHTML += compareValues("hello", "hello") + "<br>";
+    </script>
+
+    <!-- Display function for converting temperature -->
+    <script>
+        function fahrenheitToCelsius(fahrenheit) {
+            if (isNaN(fahrenheit)) {
+                return false;
+            } else {
+                let celsius = (fahrenheit - 32) * 5 / 9;
+                return celsius;
+            }
+        }
+
+        let temperature = document.getElementById("temperature");
+
+        temperature.innerHTML += fahrenheitToCelsius(38) + "°C<br>";
+        temperature.innerHTML += fahrenheitToCelsius(54) + "°C<br>";
+        temperature.innerHTML += fahrenheitToCelsius(82) + "°C<br>";
+        temperature.innerHTML += fahrenheitToCelsius(100) + "°C<br>";
+        temperature.innerHTML += fahrenheitToCelsius("false") + "<br>";
+        temperature.innerHTML += fahrenheitToCelsius("false") + "<br>";
+    </script>
+
+    <!-- Display function for arithmetic operations -->
+    <script>
+        function arithmeticOperation(a, b, operation) {
+            if (typeof a !== 'number' || typeof b !== 'number') {
+                return false;
+            }
+
+            switch (operation) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    if (b === 0) {
+                        return false;
+                    }
+                    return a / b;
+                default:
+                    return false;
+            }
+        }
+
+        let operation = document.getElementById("operation");
+
+        operation.innerHTML += arithmeticOperation(6, 2, '+') + "<br>";
+        operation.innerHTML += arithmeticOperation(9, 2, '-') + "<br>";
+        operation.innerHTML += arithmeticOperation(3, 7, '*') + "<br>";
+        operation.innerHTML += arithmeticOperation(10, 2, '/') + "<br>";
+        operation.innerHTML += arithmeticOperation(4, 0, '/') + "<br>";
+        operation.innerHTML += arithmeticOperation(6, 'abc', '+') + "<br>";
+        operation.innerHTML += arithmeticOperation('abc', 8, '*') + "<br>";
+        operation.innerHTML += arithmeticOperation(3, 'abc', '-') + "<br>";
+        operation.innerHTML += arithmeticOperation('abc', 5, '/') + "<br>";
+        operation.innerHTML += arithmeticOperation(8, 2, '&') + "<br>";
+    </script>
 
     <script src="./main.js"></script>
 </body>
