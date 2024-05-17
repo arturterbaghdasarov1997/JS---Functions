@@ -24,8 +24,6 @@
             }
         }
 
-        let equality = document.getElementById("equality");
-
         equality.innerHTML += compareValues(8, 8) + "<br>";
         equality.innerHTML += compareValues(3, "3") + "<br>";
         equality.innerHTML += compareValues(7, 9) + "<br>";
@@ -44,8 +42,6 @@
                 return celsius;
             }
         }
-
-        let temperature = document.getElementById("temperature");
 
         temperature.innerHTML += fahrenheitToCelsius(38) + "°C<br>";
         temperature.innerHTML += fahrenheitToCelsius(54) + "°C<br>";
@@ -78,8 +74,6 @@
                     return false;
             }
         }
-
-        let operation = document.getElementById("operation");
 
         operation.innerHTML += arithmeticOperation(6, 2, '+') + "<br>";
         operation.innerHTML += arithmeticOperation(9, 2, '-') + "<br>";
